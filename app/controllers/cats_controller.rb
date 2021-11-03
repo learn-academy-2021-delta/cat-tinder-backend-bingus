@@ -11,7 +11,7 @@ class CatsController < ApplicationController
     else  
         render json: cat.errors, status: 422
     end
-    end
+end
 
     def update
         cat = Cat.find(params[:id])
@@ -21,7 +21,7 @@ class CatsController < ApplicationController
         else
             render json: cat.errors, status: 422
     end
-
+end
     def destroy
         cat = Cat.find(params[:id])
         cat.destroy
@@ -33,3 +33,4 @@ class CatsController < ApplicationController
         params.require(:cat).permit(:name, :age, :gender, :breed, :enjoys)
     end
 end
+
